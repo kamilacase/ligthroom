@@ -14,7 +14,7 @@
             {% else %}
             <i class="fas fa-lightbulb"></i>
             {% endif %}
-            <br>
+            {{ light.get_status_display }}
             {{ light.id }}
         </article>
     {% endfor %}
