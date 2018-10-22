@@ -1,6 +1,6 @@
 /node_modules/
 *.pyc
 /media/
-/blog/static/img/
+/light/static/img/
 /lightroom/password.py
 db.sqlite3
