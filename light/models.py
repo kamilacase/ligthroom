@@ -6,8 +6,8 @@ from django.db import models
 # Create your models here.
 
 LIGHT_STATUS_CHOICES = (
-    ('ON', 'On'),
-    ('OFF', 'Off'),
+    ('ON', 'allumé'),
+    ('OFF', 'Eteint'),
 )
 
 class Light(models.Model):

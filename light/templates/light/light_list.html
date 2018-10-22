@@ -7,7 +7,7 @@
 {% block main %}
 <section class="grid">
     {% for obj in lights %}
-        <article class="grid-element">
+        <article id="light-{{ obj.light.id }}" class="grid-element">
 
             <p>the light : {{ obj.light.id }}</p>
             {% if obj.light.status == "ON" %}
@@ -15,7 +15,7 @@
             {% else %}
             <i class="fas fa-lightbulb"></i>
             {% endif %}
-            <form class="" action={% url 'light_switch' obj.light.id %} method="post">
+            <form class="light_form" action={% url 'light_switch' obj.light.id %} method="post">
                 {% csrf_token %}
                 <p>
                     is {{obj.from.as_p}}
@@ -32,4 +32,31 @@
 
 {% endblock %}
 {% block script %}
+<script>
+        $(document).ready(function(){
+            $('.light_form').submit(function(event){
+                var url= $(this).attr('action');
+                var data = $(this).serializeArray();
+
+                $.ajax({
+                    url : url,
+                    data : data,
+                    method : "post",
+                    success : function(response){
+                        console.log(response);
+                        if (response.status == "ON") {
+                            $(`#light-${response.id}`).children('i').removeClass('fas')
+                            $(`#light-${response.id}`).children('i').addClass('far')
+                        }else {
+                            $(`#light-${response.id}`).children('i').removeClass('far')
+                            $(`#light-${response.id}`).children('i').addClass('fas')
+                        }
+                    }
+                })
+
+                event.preventDefault();
+            });
+        });
+    </script>
+
 {% endblock %}

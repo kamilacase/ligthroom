@@ -11,6 +11,9 @@ from .froms import LightFom
 
 from django.core.urlresolvers import reverse_lazy
 
+from django.http import JsonResponse
+
+
 class LightListView(ListView):
     model = Light
     def get_context_data(self, **kwargs):
@@ -29,5 +32,10 @@ class LightListView(ListView):
 class LightSwitchView(UpdateView):
     model = Light
     form_class = LightFom
-
     success_url = reverse_lazy('light_list')
+
+    def form_valid(self, form):
+        return JsonResponse({
+        'id': self.object.id,
+        'status': self.object.status,
+        })
