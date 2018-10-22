@@ -1,0 +1,12 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+section article i {
+  font-size: 15rem;
+}
+section article i.far {
+  color: yellow;
+}
+
+/*# sourceMappingURL=style.css.map */

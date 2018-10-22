@@ -1,0 +1,13 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    article{
+        i{
+            font-size: 15rem;
+            &.far {
+                color: yellow;
+            }
+        }
+    }
+}

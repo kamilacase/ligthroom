@@ -7,9 +7,16 @@
 {% block main %}
 <section class="grid">
     {% for light in object_list %}
-        {{ light.status }}
-        {{ light.id }}
-        <br>
+        <article class="grid-element">
+
+            {% if light.status == "ON" %}
+            <i class="far fa-lightbulb"></i>
+            {% else %}
+            <i class="fas fa-lightbulb"></i>
+            {% endif %}
+            <br>
+            {{ light.id }}
+        </article>
     {% endfor %}
 </section>
 {% endblock %}
