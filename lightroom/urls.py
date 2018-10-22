@@ -16,9 +16,6 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from light.views import LightListView
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', LightListView.as_view()),
 ]
