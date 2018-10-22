@@ -2,9 +2,11 @@ section {
   font-family: 'Mali', cursive;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 8rem;
+  font-size: 1.5rem;
 }
 section article {
+  border-bottom: 1.5rem dotted;
   text-align: center;
 }
 section article i {

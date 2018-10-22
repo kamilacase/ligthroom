@@ -9,14 +9,12 @@
     {% for light in object_list %}
         <article class="grid-element">
 
+            <p>the light : {{ light.id }}</p>
             {% if light.status == "ON" %}
             <i class="far fa-lightbulb"></i>
             {% else %}
             <i class="fas fa-lightbulb"></i>
             {% endif %}
-            <p>
-                the light : {{ light.id }}
-            </p>
             <p>
                 is {{ light.get_status_display }}
             </p>
