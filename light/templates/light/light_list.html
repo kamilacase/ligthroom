@@ -6,22 +6,30 @@
 
 {% block main %}
 <section class="grid">
-    {% for light in object_list %}
+    {% for obj in lights %}
         <article class="grid-element">
 
-            <p>the light : {{ light.id }}</p>
-            {% if light.status == "ON" %}
+            <p>the light : {{ obj.light.id }}</p>
+            {% if obj.light.status == "ON" %}
             <i class="far fa-lightbulb"></i>
             {% else %}
             <i class="fas fa-lightbulb"></i>
             {% endif %}
-            <p>
-                is {{ light.get_status_display }}
-            </p>
+            <form class="" action={% url 'light_switch' obj.light.id %} method="post">
+                {% csrf_token %}
+                <p>
+                    is {{obj.from.as_p}}
+                    <button type="submit" name="submit">valiez</button>
+                </p>
+            </form>
+
+
         </article>
     {% endfor %}
 </section>
 {% endblock %}
 {% block footer %}
 
+{% endblock %}
+{% block script %}
 {% endblock %}

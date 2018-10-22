@@ -4,6 +4,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8rem;
   font-size: 1.5rem;
+  background: #141414;
 }
 section article {
   border-bottom: 1.5rem dotted;
@@ -14,6 +15,7 @@ section article i {
 }
 section article i.far {
   color: yellow;
+  text-shadow: 1px 10px 70px #ff9100, 1px 1px 300px #ffefa8;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+{% extends "light/base.html" %}
+{% block header %}
+
+{% endblock %}
+
+
+{% block main %}
+<section class="grid">
+    <article class="grid-element">
+
+        <p>the light : {{ obj.light.id }}</p>
+        {% if obj.light.status == "ON" %}
+        <i class="far fa-lightbulb"></i>
+        {% else %}
+        <i class="fas fa-lightbulb"></i>
+        {% endif %}
+        <form class="" action="." method="post">
+            <p>
+
+                is {{ obj.light.get_status_display }}
+            </p>
+        </form>
+
+
+    </article>
+</section>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

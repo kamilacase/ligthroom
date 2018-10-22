@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from light.views import LightListView
+from light.views import LightListView, LightSwitchView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', LightListView.as_view(), name="light_list"),
+    url(r'^light/(?P<pk>\d+)/switch/$', LightSwitchView.as_view(), name="light_switch"),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
