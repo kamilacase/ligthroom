@@ -1,8 +1,10 @@
 section {
+    font-family: 'Mali', cursive;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+    grid-gap: 2rem;
     article{
+        text-align: center;
         i{
             font-size: 15rem;
             &.far {

@@ -14,8 +14,12 @@
             {% else %}
             <i class="fas fa-lightbulb"></i>
             {% endif %}
-            {{ light.get_status_display }}
-            {{ light.id }}
+            <p>
+                the light : {{ light.id }}
+            </p>
+            <p>
+                is {{ light.get_status_display }}
+            </p>
         </article>
     {% endfor %}
 </section>
